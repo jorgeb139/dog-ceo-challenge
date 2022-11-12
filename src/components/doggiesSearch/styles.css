@@ -1,0 +1,18 @@
+.heroImage {
+  height: 50vh;
+}
+
+.inputContainer{
+  height: 500px;
+  width: 80%;
+  background-color: gray;
+  margin-top: -156px;
+}
+
+@media screen and (max-width: 900px) {
+  .heroImage {
+    height: 40vh;
+  }
+
+  
+}
