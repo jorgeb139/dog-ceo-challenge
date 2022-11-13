@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
 .App {
   text-align: center;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}

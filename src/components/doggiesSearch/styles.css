@@ -1,18 +1,49 @@
-.heroImage {
-  height: 50vh;
+.hero-container {
+  background-image: url("../../../public/images/hero-fondo.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 20px;
 }
 
-.inputContainer{
+.pre-title{
+  font-size:22px;
+  margin-bottom: -10px
+}
+
+.main-title{
+  color: #319bcd;
+  font-size:70px;
+  font-family: 'Secular One', sans-serif;
+}
+
+.hero-image{
+  padding-top: 100px;
+  width:100vh
+}
+
+.input-container{
   height: 500px;
-  width: 80%;
   background-color: gray;
-  margin-top: -156px;
+  text-align: center;
 }
 
 @media screen and (max-width: 900px) {
-  .heroImage {
-    height: 40vh;
+  
+  .hero-container {
+    padding-top: 0px;
   }
 
-  
+  .hero-image{
+    padding-top: 30px;
+    width:50vh
+  }
+
+  .pre-title{
+    font-size:18px;
+  }
+
+  .main-title{
+    font-size:50px;
+  }
 }
