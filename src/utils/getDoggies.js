@@ -4,8 +4,7 @@ export const getDoggies = async (setter, type, breed = "") => {
   const baseURL =
     type === "breeds"
       ? "https://dog.ceo/api/breeds/list/all"
-      : // : `https://dog.ceo/api/breed/${breed}/images/random`;
-        `https://dog.ceo/api/breed/${breed}/list`;
+      : `https://dog.ceo/api/breed/${breed}/list`;
 
   try {
     const res = await axios.get(baseURL);
