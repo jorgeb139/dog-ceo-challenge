@@ -19,13 +19,25 @@
 
 .hero-image{
   padding-top: 100px;
-  width:100vh
+  width:70vw;
+  max-width: 800px;
 }
 
 .input-container{
-  height: 500px;
-  background-color: gray;
-  text-align: center;
+  padding-top:60px
+}
+
+.images-container{
+  padding-top: 0px
+}
+
+.afraid-text{
+  font-size: 20px
+}
+
+.breed-input{
+  width: 70%; 
+  max-width: 400px;
 }
 
 @media screen and (max-width: 900px) {
@@ -36,7 +48,6 @@
 
   .hero-image{
     padding-top: 30px;
-    width:50vh
   }
 
   .pre-title{
@@ -45,5 +56,9 @@
 
   .main-title{
     font-size:50px;
+  }
+
+  .input-container{
+    padding-top:30px
   }
 }

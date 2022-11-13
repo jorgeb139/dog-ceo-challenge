@@ -1,0 +1,25 @@
+.container {
+  padding: 0px 10%
+}
+
+.breed-title{
+  color: #319bcd;
+  font-size:40px;
+  font-family: 'Secular One', sans-serif;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.doggies-images{
+  width:100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 900px) {
+  .breed-title{
+    font-size:30px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+}

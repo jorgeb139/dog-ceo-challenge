@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Autocomplete, Grid, TextField } from "@mui/material";
+import { Autocomplete, Box, Grid, TextField } from "@mui/material";
 
 import { getDoggies } from "../../utils/getDoggies";
 import DoggiesImages from "../doggiesImages";
@@ -69,73 +69,84 @@ export default function InputSearch() {
   return (
     <>
       {doggiesBreed.length === 0 ? (
-        <div>Loading...</div>
-      ) : (
-        <Grid container>
-          <Autocomplete
-            value={value}
-            onChange={(event, newValue) => {
-              handleOnChange(setValue, newValue, "breed");
-            }}
-            multiple
-            limitTags={4}
-            id="multiple-limit-tags"
-            options={doggiesBreed}
-            getOptionLabel={(option) =>
-              option.charAt(0).toUpperCase() + option.slice(1)
-            }
-            defaultValue={[]}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Breeds"
-                placeholder="Doggies Breeds"
-              />
-            )}
-            sx={{ width: "500px" }}
-          />
-          <div>
-            {subDoggies.length === 0 && subValue.length === 0 ? (
-              <div>Without sub breeds</div>
-            ) : (
-              <>
-                <Autocomplete
-                  value={subValue}
-                  onChange={(event, newValue) => {
-                    handleOnChange(setSubValue, newValue, "subBreed");
-                  }}
-                  freeSolo
-                  multiple
-                  limitTags={4}
-                  id="multiple-limit-tags"
-                  options={subDoggies}
-                  getOptionLabel={(option) =>
-                    option.charAt(0).toUpperCase() + option.slice(1)
-                  }
-                  defaultValue={[]}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      label="Sub Breeds"
-                      placeholder="Doggies Sub Breeds"
-                    />
-                  )}
-                  sx={{ width: "500px" }}
-                />
-              </>
-            )}
-          </div>
-          {lastBreed.length === 0 && value.length === 0 ? (
-            <div>No breed selected</div>
-          ) : (
-            <div>
-              <DoggiesImages
-                breed={lastBreed.length > 0 ? lastBreed : value}
-                difference={differenceValue}
-              />
-            </div>
-          )}
+        <Grid item xs={12}>
+          Loading...
         </Grid>
+      ) : (
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container item xs={12} justifyContent="center">
+            <Autocomplete
+              value={value}
+              onChange={(event, newValue) => {
+                handleOnChange(setValue, newValue, "breed");
+              }}
+              multiple
+              limitTags={4}
+              id="multiple-limit-tags"
+              options={doggiesBreed}
+              getOptionLabel={(option) =>
+                option.charAt(0).toUpperCase() + option.slice(1)
+              }
+              defaultValue={[]}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Breeds"
+                  placeholder="Doggies Breeds"
+                />
+              )}
+              className="breed-input"
+            />
+            <Grid item xs={12} sx={{ paddingTop: "20px" }}>
+              {subDoggies.length === 0 && subValue.length === 0 ? (
+                <></>
+              ) : (
+                <Box sx={{ flexGrow: 1 }}>
+                  <Grid container item xs={12} justifyContent="center">
+                    <Autocomplete
+                      value={subValue}
+                      onChange={(event, newValue) => {
+                        handleOnChange(setSubValue, newValue, "subBreed");
+                      }}
+                      freeSolo
+                      multiple
+                      limitTags={4}
+                      id="multiple-limit-tags"
+                      options={subDoggies}
+                      getOptionLabel={(option) =>
+                        option.charAt(0).toUpperCase() + option.slice(1)
+                      }
+                      defaultValue={[]}
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          label="Sub Breeds"
+                          placeholder="Doggies Sub Breeds"
+                        />
+                      )}
+                      className="breed-input"
+                      sx={{ width: "70%", maxWidth: "400px" }}
+                    />
+                  </Grid>
+                </Box>
+              )}
+            </Grid>
+            {lastBreed.length === 0 && value.length === 0 ? (
+              <Grid item xs={12} className="images-container">
+                <span className="afraid-text">
+                  Don't be afraid, select a breed. They won't bite you!!
+                </span>
+              </Grid>
+            ) : (
+              <Grid item xs={12} className="images-container">
+                <DoggiesImages
+                  breed={lastBreed.length > 0 ? lastBreed : value}
+                  difference={differenceValue}
+                />
+              </Grid>
+            )}
+          </Grid>
+        </Box>
       )}
     </>
   );

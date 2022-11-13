@@ -17,7 +17,7 @@ export default function DoggiesSearch() {
             alt="hero doggie"
           />
         </Grid>
-        <Grid className={"input-container"}>
+        <Grid item xs={12} className={"input-container"}>
           <InputSearch />
         </Grid>
       </Grid>

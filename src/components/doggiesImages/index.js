@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 import "./styles.css";
 import { getImages } from "../../utils/getImages";
@@ -23,20 +23,35 @@ export default function DoggiesImages(data) {
   return (
     <>
       {doggiesImages.length === 0 ? (
-        <div>Loading images...</div>
-      ) : (
-        <Grid container justifyContent="center" paddingTop={6}>
-          {doggiesImages?.map((element, id) => (
-            <div key={id}>
-              <span>{element.breed}</span>
-              {element.images?.map((image, id) => (
-                <Grid key={id} item md={4} xs={12}>
-                  <img src={image} alt="Doggies"></img>
-                </Grid>
-              ))}
-            </div>
-          ))}
+        <Grid item xs={12}>
+          Loading images...
         </Grid>
+      ) : (
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid
+            container
+            justifyContent="center"
+            paddingTop={6}
+            className="container"
+          >
+            {doggiesImages?.map((element, id) => (
+              <>
+                <span className="breed-title">{element.breed}</span>
+                <Grid item container xs={12} key={id} spacing={2}>
+                  {element.images?.map((image, id) => (
+                    <Grid key={id} item md={4} xs={12}>
+                      <img
+                        src={image}
+                        alt="Doggies"
+                        className="doggies-images"
+                      ></img>
+                    </Grid>
+                  ))}
+                </Grid>
+              </>
+            ))}
+          </Grid>
+        </Box>
       )}
     </>
   );
