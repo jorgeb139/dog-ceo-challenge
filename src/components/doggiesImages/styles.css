@@ -2,12 +2,19 @@
   padding: 0px 10%
 }
 
+.breed-container{
+
+}
+
+.breed-images-container{
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
 .breed-title{
   color: #319bcd;
   font-size:40px;
   font-family: 'Secular One', sans-serif;
-  padding-top: 40px;
-  padding-bottom: 20px;
 }
 
 .doggies-images{

@@ -8,11 +8,11 @@ export default function DoggiesSearch() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container justifyContent="center" paddingTop={6}>
-        <Grid className="hero-container" item xs={12}>
-          <h2 className="pre-title">Discover the most beautiful</h2>
-          <h1 className="main-title">Doggies</h1>
+        <Grid className="hero-container fadeInLeft" item xs={12}>
+          <h2 className="pre-title fadeInLeft">Discover the most beautiful</h2>
+          <h1 className="main-title fadeInLeft">Doggies</h1>
           <img
-            className="hero-image"
+            className="hero-image fadeInLeft"
             src="/images/hero-doggie.png"
             alt="hero doggie"
           />

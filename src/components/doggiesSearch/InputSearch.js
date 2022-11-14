@@ -65,7 +65,7 @@ export default function InputSearch() {
       setDoggiesSubBreedBackup(value);
     }
   };
-  console.log("Value final: ", value);
+
   return (
     <>
       {doggiesBreed.length === 0 ? (
@@ -73,7 +73,7 @@ export default function InputSearch() {
           Loading...
         </Grid>
       ) : (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1 }} className={"box-container fadeInLeft"}>
           <Grid container item xs={12} justifyContent="center">
             <Autocomplete
               value={value}

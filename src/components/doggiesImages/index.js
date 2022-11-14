@@ -35,9 +35,18 @@ export default function DoggiesImages(data) {
             className="container"
           >
             {doggiesImages?.map((element, id) => (
-              <>
-                <span className="breed-title">{element.breed}</span>
-                <Grid item container xs={12} key={id} spacing={2}>
+              <div key={id} className="breed-container">
+                <span className="breed-title">
+                  {element.breed.charAt(0).toUpperCase() +
+                    element.breed.slice(1)}
+                </span>
+                <Grid
+                  item
+                  container
+                  xs={12}
+                  spacing={2}
+                  className="breed-images-container"
+                >
                   {element.images?.map((image, id) => (
                     <Grid key={id} item md={4} xs={12}>
                       <img
@@ -48,7 +57,7 @@ export default function DoggiesImages(data) {
                     </Grid>
                   ))}
                 </Grid>
-              </>
+              </div>
             ))}
           </Grid>
         </Box>
