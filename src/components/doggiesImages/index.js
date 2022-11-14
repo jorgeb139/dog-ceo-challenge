@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Grid } from "@mui/material";
-
-import "./styles.css";
 import { getImages } from "../../utils/getImages";
+import "./styles.css";
 
 export default function DoggiesImages(data) {
   const [doggiesImages, setDoggiesImages] = useState([]);
